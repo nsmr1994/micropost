@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :require_user_logged_in
   def create
     user = User.find(params[:favorite_id])
     current_user.favorite(user)
